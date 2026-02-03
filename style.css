@@ -1,0 +1,95 @@
+:root {
+    --black: #050505;
+    --dark: #0f0f0f;
+    --orange: #ff6600;
+    --yellow: #ffcc00;
+    --wa-green: #25d366;
+    --tg-blue: #0088cc;
+}
+
+body {
+    margin: 0; background: var(--black); color: white;
+    font-family: 'Exo 2', sans-serif; overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* NAVBAR */
+.navbar {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(15px);
+    padding: 15px 0; border-bottom: 1px solid #1a1a1a;
+}
+.nav-inner { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 26px; font-weight: 900; cursor: pointer; }
+.logo-accent { color: var(--orange); }
+.nav-menu button {
+    background: none; border: none; color: white; font-weight: 600;
+    margin: 0 10px; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 14px;
+}
+.nav-menu button:hover { color: var(--orange); }
+
+/* PAGE LOGIC */
+.page { display: none; padding-top: 100px; min-height: 100vh; animation: fadeIn 0.4s; }
+.page.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* HERO */
+.hero-section { height: 85vh; display: flex; align-items: center; position: relative; }
+.hero-bg-gradient {
+    position: absolute; top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,102,0,0.08) 0%, transparent 70%);
+}
+h1 { font-size: clamp(40px, 8vw, 80px); font-weight: 900; line-height: 1; }
+.orange-text { color: var(--orange); text-shadow: 0 0 20px var(--orange); }
+.hero-sub { color: #888; margin: 25px 0; max-width: 450px; font-size: 16px; }
+
+/* BUTTONS */
+.btn-mega {
+    background: linear-gradient(90deg, var(--orange), var(--yellow));
+    border: none; padding: 20px 45px; border-radius: 8px;
+    font-weight: 900; cursor: pointer; color: black; transition: 0.3s;
+}
+.btn-mega:hover { box-shadow: 0 0 30px var(--orange); transform: translateY(-2px); }
+
+/* PRICES */
+.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px 0; }
+.price-item {
+    background: var(--dark); padding: 25px; border-radius: 12px;
+    transition: 0.3s; cursor: pointer;
+}
+.neon-border { border: 1px solid var(--orange); box-shadow: 0 0 10px rgba(255,102,0,0.1); }
+.neon-border:hover { box-shadow: 0 0 20px rgba(255,102,0,0.3); transform: translateY(-5px); }
+.price-header { font-size: 20px; color: var(--orange); margin-bottom: 20px; font-weight: 900; }
+.row { display: flex; justify-content: space-between; padding: 10px 0; font-size: 14px; border-bottom: 1px solid #1a1a1a; }
+.btn-order { width: 100%; padding: 12px; margin-top: 20px; background: transparent; border: 1px solid #333; color: white; border-radius: 6px; }
+
+/* REVIEWS */
+.reviews-footer-logo {
+    text-align: center; font-size: 30px; font-weight: 900; margin-top: 40px;
+    color: white; opacity: 0.8; letter-spacing: 2px;
+}
+.footer-tag { font-size: 12px; color: var(--orange); vertical-align: middle; border: 1px solid var(--orange); padding: 2px 8px; margin-left: 10px; }
+
+/* CONTACTS */
+.phone-display-small { font-size: 32px; font-weight: 900; text-align: center; margin-bottom: 30px; letter-spacing: 1px; }
+.messenger-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.mess-box { display: flex; align-items: center; padding: 15px; border-radius: 10px; text-decoration: none; transition: 0.3s; }
+.mess-icon-mini { font-weight: 900; margin-right: 12px; font-size: 18px; }
+.m-label-small { display: block; font-weight: 800; font-size: 14px; }
+.m-link-small { font-size: 11px; opacity: 0.7; }
+.contact-footer-decor { text-align: center; margin-top: 40px; font-size: 10px; color: #444; letter-spacing: 4px; }
+
+/* MODAL */
+.modal-overlay {
+    position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9);
+    display: none; align-items: center; justify-content: center; z-index: 2000;
+}
+.modal-content { background: #080808; padding: 40px; border: 1px solid var(--orange); width: 90%; max-width: 400px; position: relative; border-radius: 15px; }
+.modal-x { position: absolute; top: 15px; right: 20px; background: none; border: none; color: white; font-size: 24px; cursor: pointer; opacity: 0.5; }
+.modal-x:hover { opacity: 1; }
+.btn-confirm {
+    width: 100%; padding: 16px; background: var(--orange); border: none; color: black;
+    font-weight: 900; cursor: pointer; border-radius: 12px; margin-top: 10px; transition: 0.3s;
+}
+.btn-confirm:hover { background: var(--yellow); }
